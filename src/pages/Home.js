@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import SearchBar from "../components/SearchBar";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -32,6 +33,9 @@ export default function Home() {
                 <div className="card-body">
                   <h5 className="card-title">{recipe.strMeal}</h5>
                   <p className="card-text">{recipe.strArea} Cuisine</p>
+                  <Link to={`/recipe/${recipe.idMeal}`} className="btn btn-primary btn-sm">
+                    View Details
+                  </Link>
                 </div>
               </div>
             </div>
